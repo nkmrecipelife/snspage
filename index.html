@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>なかむ | 手取り18万の簡単節約レシピ | Official Portal</title>
+  <meta name="description" content="なかむの公式SNSリンク一覧。手取り18万の簡単節約レシピ、Instagram、TikTok、YouTube、楽天ROOMなどの最新コンテンツへアクセスできます。">
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta property="og:title" content="なかむ | 手取り18万の簡単節約レシピ | Official Portal">
+  <meta property="og:description" content="なかむの公式SNSリンク一覧。簡単節約レシピや最新コンテンツへはこちらから。">
+  <meta property="og:image" content="avatar.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-color-overlay: rgba(242, 246, 247, 0.7); /* Semi-transparent cool overlay */
+      --card-bg: #ffffff;
+      --card-border: #d2dede;
+      --text-primary: #3d3d3d;
+      --text-secondary: #7d7d75;
+      --font-english: 'Inter', sans-serif;
+      --font-japanese: 'Noto Sans JP', sans-serif;
+      --transition-soft: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    body {
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--text-primary);
+      font-family: var(--font-japanese);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Container (Glassmorphism Floating Card Style) */
+    .container {
+      width: calc(100% - 32px);
+      max-width: 440px;
+      margin: 32px auto;
+      padding: 40px 24px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 32px;
+      box-shadow: 0 20px 50px rgba(10, 45, 50, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    /* Header & Profile Section */
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .profile-avatar-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 16px auto 0;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    }
+
+    .profile-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 28px rgba(0, 140, 150, 0.28);
+      transition: var(--transition-soft);
+    }
+
+    .profile-avatar-container:hover .profile-avatar {
+      transform: scale(1.03);
+      box-shadow: 0 12px 36px rgba(0, 140, 150, 0.45);
+    }
+
+    .profile-name {
+      font-size: clamp(1rem, 4.8vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+    }
+
+    .profile-highlight-info {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin-top: 16px;
+      margin-bottom: 8px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+    }
+
+    .profile-info {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      margin-top: 24px;
+      font-weight: 500;
+      opacity: 0.85;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+    }
+
+    .profile-info a {
+      color: inherit;
+      text-decoration: none;
+      position: relative;
+      font-weight: 600;
+      transition: var(--transition-soft);
+    }
+
+    .profile-info a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--text-primary);
+      transform-origin: bottom left;
+      transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .profile-info a:hover {
+      color: var(--text-primary);
+    }
+
+    .profile-info a:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Main Section: Large Buttons */
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .link-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      text-decoration: none;
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: var(--transition-soft);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    /* Animation delays for cards */
+    .link-card:nth-child(1) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards; }
+    .link-card:nth-child(2) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.53s forwards; }
+    .link-card:nth-child(3) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.61s forwards; }
+    .link-card:nth-child(4) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.69s forwards; }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Elastic tap feedback */
+    .link-card:active {
+      transform: scale(0.97);
+      background: rgba(240, 244, 245, 0.9) !important;
+      transition: transform 0.08s ease-out;
+    }
+
+
+
+    .link-icon {
+      font-size: 1.3rem;
+      width: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 14px;
+      color: var(--text-secondary);
+      transition: var(--transition-soft);
+    }
+
+    .link-text-group {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .link-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .link-subtitle {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      margin-top: 3px;
+      line-height: 1;
+      text-transform: lowercase;
+    }
+
+    /* Platform Specific Styling (Soft/Dusty Pastel Tones on Hover) */
+    /* Instagram */
+    .link-instagram:hover {
+      background: rgba(253, 245, 246, 0.75);
+      border-color: rgba(245, 214, 218, 0.8);
+    }
+    .link-instagram:hover .link-icon {
+      color: #e6683c;
+      transform: scale(1.1) rotate(-8deg);
+    }
+
+    /* TikTok */
+    .link-tiktok:hover {
+      background: rgba(241, 248, 249, 0.75);
+      border-color: rgba(210, 235, 235, 0.8);
+    }
+    .link-tiktok:hover .link-icon {
+      color: #000000;
+      transform: scale(1.1) translateY(-2px);
+    }
+
+    /* YouTube */
+    .link-youtube:hover {
+      background: rgba(255, 245, 245, 0.75);
+      border-color: rgba(255, 210, 210, 0.8);
+    }
+    .link-youtube:hover .link-icon {
+      color: #ff0000;
+      transform: scale(1.15);
+    }
+
+    /* Rakuten ROOM */
+    .link-rakuten:hover {
+      background: rgba(255, 246, 243, 0.75);
+      border-color: rgba(255, 216, 204, 0.8);
+    }
+    .link-rakuten:hover .link-icon {
+      color: #d11e50;
+      transform: scale(1.1) translateY(-2px);
+    }
+    .link-rakuten:hover .rakuten-roof {
+      transform: translateY(-1.5px);
+    }
+    
+    /* Rakuten ROOM Custom Icon Support */
+    .rakuten-icon {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .rakuten-roof {
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Sub-Section: Mini Icons */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 24px;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0.55s forwards;
+      z-index: 10;
+    }
+
+    .social-icon-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(100, 90, 70, 0.02);
+      transition: var(--transition-soft);
+    }
+
+    .social-icon-btn:hover {
+      color: var(--text-primary);
+      background: #ffffff;
+      border-color: rgba(100, 90, 70, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(100, 90, 70, 0.05);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-family: var(--font-english);
+      font-size: 0.7rem;
+      color: rgba(100, 90, 70, 0.5);
+      letter-spacing: 0.1em;
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards 0.7s;
+    }
+
+    /* Keyframes */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Custom Tap Effects for Mobile */
+    @media (hover: none) {
+      /* Handled by global .link-card:active for elastic feedback */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Profile Header -->
+    <header>
+      <h1 class="profile-name">なかむ | 手取り18万の簡単節約レシピ</h1>
+      <div class="profile-avatar-container">
+        <!-- avatar.png uses the cozy plant illustration -->
+        <img class="profile-avatar" src="avatar.png" alt="Profile avatar of なかむ" width="100" height="100">
+      </div>
+      <p class="profile-highlight-info">インスタのハイライトで日々の食費、<br>お得商品情報を上げています。</p>
+      <p class="profile-info">※お仕事のご依頼は<a href="https://ig.me/m/nakamu_recipelife" target="_blank" rel="noopener noreferrer">InstagramのDM</a>まで</p>
+    </header>
+
+    <!-- Main Navigation: Large Buttons -->
+    <main>
+      
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/nakamu_recipelife" class="link-card link-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagramでなかむをフォローする">
+        <span class="link-icon"><i class="fa-brands fa-instagram"></i></span>
+        <div class="link-text-group">
+          <span class="link-title">Instagram</span>
+          <span class="link-subtitle">recipes & lifestyle</span>
+        </div>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@nakamu_recipelife" class="link-card link-tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTokでなかむの簡単節約レシピ動画を見る">
+        <span class="link-icon"><i class="fa-brands fa-tiktok"></i></span>
+        <div class="link-text-group">
+          <span class="link-title">TikTok</span>
+          <span class="link-subtitle">short recipe videos</span>
+        </div>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com/@nakamu_recipelife" class="link-card link-youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTubeでなかむの公式チャンネルを視聴する">
+        <span class="link-icon"><i class="fa-brands fa-youtube"></i></span>
+        <div class="link-text-group">
+          <span class="link-title">YouTube</span>
+          <span class="link-subtitle">cooking channel</span>
+        </div>
+      </a>
+
+      <!-- Rakuten ROOM -->
+      <a href="https://room.rakuten.co.jp/nakamu_recipelife/items" class="link-card link-rakuten" target="_blank" rel="noopener noreferrer" aria-label="楽天ROOMでなかむの愛用品をチェックする">
+        <span class="link-icon">
+          <!-- Custom Shop Icon (Lines matched with FontAwesome) -->
+          <svg class="rakuten-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+            <path class="rakuten-roof" d="m3 9 2.44-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+            <path d="M12 3v6"/>
+          </svg>
+        </span>
+        <div class="link-text-group">
+          <span class="link-title">楽天ROOM</span>
+          <span class="link-subtitle">my favorite items</span>
+        </div>
+      </a>
+
+    </main>
+
+  </div>
+
+  <script>
+    // Track clicks on link cards for demonstration / analytics purposes
+    document.querySelectorAll('.link-card').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const targetLabel = btn.getAttribute('aria-label') || btn.innerText.trim();
+        console.log(`[Analytics] User navigated to: ${targetLabel}`);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -34,8 +34,8 @@
       --bg-color-overlay: rgba(242, 246, 247, 0.7); /* Semi-transparent cool overlay */
       --card-bg: #ffffff;
       --card-border: #d2dede;
-      --text-primary: #3d3d3d;
-      --text-secondary: #7d7d75;
+      --text-primary: #082024;
+      --text-secondary: #364f53;
       --font-english: 'Inter', sans-serif;
       --font-japanese: 'Noto Sans JP', sans-serif;
       --transition-soft: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -58,23 +58,23 @@
       position: relative;
     }
 
-    /* Container (Glassmorphism Floating Card Style) */
+    /* Container (Ultra-Transparent Glass Style) */
     .container {
       width: calc(100% - 32px);
-      max-width: 440px;
+      max-width: 390px;
       margin: 32px auto;
-      padding: 40px 24px;
+      padding: 36px 20px;
       position: relative;
       z-index: 10;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 32px;
-      box-shadow: 0 20px 50px rgba(10, 45, 50, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(10, 45, 50, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
     /* Header & Profile Section */
@@ -128,13 +128,13 @@
     .profile-highlight-info {
       font-size: 0.85rem;
       line-height: 1.5;
-      color: var(--text-secondary);
+      color: var(--text-primary);
       margin-top: 16px;
       margin-bottom: 8px;
       max-width: 320px;
       margin-left: auto;
       margin-right: auto;
-      font-weight: 400;
+      font-weight: 500;
       opacity: 0;
       transform: translateY(10px);
       animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
@@ -142,11 +142,10 @@
 
     .profile-info {
       font-size: 0.75rem;
-      color: var(--text-secondary);
+      color: var(--text-primary);
       letter-spacing: 0.05em;
       margin-top: 24px;
-      font-weight: 500;
-      opacity: 0.85;
+      font-weight: 600;
       opacity: 0;
       transform: translateY(10px);
       animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
@@ -154,52 +153,73 @@
 
     .profile-info a {
       color: inherit;
-      text-decoration: none;
-      position: relative;
+      text-decoration: underline;
+      text-underline-offset: 3px;
       font-weight: 600;
       transition: var(--transition-soft);
-    }
-
-    .profile-info a::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      transform: scaleX(0);
-      height: 1px;
-      bottom: -2px;
-      left: 0;
-      background-color: var(--text-primary);
-      transform-origin: bottom left;
-      transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .profile-info a:hover {
       color: var(--text-primary);
     }
 
-    .profile-info a:hover::after {
-      transform: scaleX(1);
-    }
-
-    /* Main Section: Large Buttons */
+    /* Main Section: Large Buttons & Groups */
     main {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 24px;
       margin-bottom: 36px;
+    }
+
+    .link-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .group-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      padding-left: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    
+    /* Group title fade-in delays */
+    .link-group:nth-child(1) .group-title {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.40s forwards;
+    }
+    .link-group:nth-child(2) .group-title {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.70s forwards;
+    }
+
+    .group-subtitle {
+      font-size: 0.58rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
     }
 
     .link-card {
       position: relative;
       display: flex;
       align-items: center;
-      padding: 16px 24px;
+      padding: 12px 20px;
       text-decoration: none;
       color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -209,11 +229,11 @@
       transform: translateY(15px);
     }
 
-    /* Animation delays for cards */
-    .link-card:nth-child(1) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards; }
-    .link-card:nth-child(2) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.53s forwards; }
-    .link-card:nth-child(3) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.61s forwards; }
-    .link-card:nth-child(4) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.69s forwards; }
+    /* Animation delays for individual cards inside groups */
+    .link-group:nth-child(1) .link-card:nth-child(2) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.46s forwards; }
+    .link-group:nth-child(1) .link-card:nth-child(3) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.54s forwards; }
+    .link-group:nth-child(1) .link-card:nth-child(4) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.62s forwards; }
+    .link-group:nth-child(2) .link-card:nth-child(2) { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.76s forwards; }
 
     .link-card:hover {
       transform: translateY(-2px);
@@ -249,7 +269,7 @@
 
     .link-title {
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       line-height: 1.2;
@@ -257,7 +277,7 @@
 
     .link-subtitle {
       font-size: 0.7rem;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--text-secondary);
       letter-spacing: 0.05em;
       margin-top: 3px;
@@ -388,13 +408,26 @@
       .container {
         width: calc(100% - 24px);
         margin: 20px auto;
-        padding: 28px 18px;
-        border-radius: 24px;
+        padding: 24px 16px;
+        border-radius: 18px;
+      }
+      
+      .link-card {
+        padding: 11px 16px;
+        border-radius: 10px;
       }
       
       main {
-        gap: 10px;
+        gap: 18px;
         margin-bottom: 24px;
+      }
+
+      .link-group {
+        gap: 10px;
+      }
+
+      .group-title {
+        margin-bottom: 2px;
       }
 
       header {
@@ -419,55 +452,65 @@
         <!-- avatar.png uses the cozy plant illustration -->
         <img class="profile-avatar" src="avatar.png" alt="Profile avatar of なかむ" width="100" height="100">
       </div>
-      <p class="profile-highlight-info">インスタのハイライトで日々の食費、<br>お得商品情報を上げています。</p>
+      <p class="profile-highlight-info">食費月1.5万で過ごすリアルを発信中</p>
       <p class="profile-info">※お仕事のご依頼は<a href="https://ig.me/m/nakamu_recipelife" target="_blank" rel="noopener noreferrer">InstagramのDM</a>まで</p>
     </header>
 
     <!-- Main Navigation: Large Buttons -->
     <main>
       
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/nakamu_recipelife" class="link-card link-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagramでなかむをフォローする">
-        <span class="link-icon"><i class="fa-brands fa-instagram"></i></span>
-        <div class="link-text-group">
-          <span class="link-title">Instagram</span>
-          <span class="link-subtitle">recipes & lifestyle</span>
-        </div>
-      </a>
+      <!-- 料理投稿 (Instagram, TikTok, YouTube) -->
+      <div class="link-group">
+        <h2 class="group-title">料理投稿 <span class="group-subtitle">cooking recipes</span></h2>
 
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@nakamu_recipelife" class="link-card link-tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTokでなかむの簡単節約レシピ動画を見る">
-        <span class="link-icon"><i class="fa-brands fa-tiktok"></i></span>
-        <div class="link-text-group">
-          <span class="link-title">TikTok</span>
-          <span class="link-subtitle">short recipe videos</span>
-        </div>
-      </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/nakamu_recipelife" class="link-card link-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagramでなかむをフォローする">
+          <span class="link-icon"><i class="fa-brands fa-instagram"></i></span>
+          <div class="link-text-group">
+            <span class="link-title">Instagram</span>
+            <span class="link-subtitle">recipes & lifestyle</span>
+          </div>
+        </a>
+  
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@nakamu_recipelife" class="link-card link-tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTokでなかむの簡単節約レシピ動画を見る">
+          <span class="link-icon"><i class="fa-brands fa-tiktok"></i></span>
+          <div class="link-text-group">
+            <span class="link-title">TikTok</span>
+            <span class="link-subtitle">short recipe videos</span>
+          </div>
+        </a>
+  
+        <!-- YouTube -->
+        <a href="https://youtube.com/@nakamu_recipelife" class="link-card link-youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTubeでなかむの公式チャンネルを視聴する">
+          <span class="link-icon"><i class="fa-brands fa-youtube"></i></span>
+          <div class="link-text-group">
+            <span class="link-title">YouTube</span>
+            <span class="link-subtitle">cooking channel</span>
+          </div>
+        </a>
+      </div>
 
-      <!-- YouTube -->
-      <a href="https://youtube.com/@nakamu_recipelife" class="link-card link-youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTubeでなかむの公式チャンネルを視聴する">
-        <span class="link-icon"><i class="fa-brands fa-youtube"></i></span>
-        <div class="link-text-group">
-          <span class="link-title">YouTube</span>
-          <span class="link-subtitle">cooking channel</span>
-        </div>
-      </a>
+      <!-- 日用品 (楽天ROOM) -->
+      <div class="link-group">
+        <h2 class="group-title">日用品・愛用品 <span class="group-subtitle">daily goods</span></h2>
 
-      <!-- Rakuten ROOM -->
-      <a href="https://room.rakuten.co.jp/nakamu_recipelife/items" class="link-card link-rakuten" target="_blank" rel="noopener noreferrer" aria-label="楽天ROOMでなかむの愛用品をチェックする">
-        <span class="link-icon">
-          <!-- Custom Shop Icon (Lines matched with FontAwesome) -->
-          <svg class="rakuten-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
-            <path class="rakuten-roof" d="m3 9 2.44-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
-            <path d="M12 3v6"/>
-          </svg>
-        </span>
-        <div class="link-text-group">
-          <span class="link-title">楽天ROOM</span>
-          <span class="link-subtitle">my favorite items</span>
-        </div>
-      </a>
+        <!-- Rakuten ROOM -->
+        <a href="https://room.rakuten.co.jp/nakamu_recipelife/items" class="link-card link-rakuten" target="_blank" rel="noopener noreferrer" aria-label="楽天ROOMでなかむの愛用品をチェックする">
+          <span class="link-icon">
+            <!-- Custom Shop Icon (Lines matched with FontAwesome) -->
+            <svg class="rakuten-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+              <path class="rakuten-roof" d="m3 9 2.44-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+              <path d="M12 3v6"/>
+            </svg>
+          </span>
+          <div class="link-text-group">
+            <span class="link-title">楽天ROOM</span>
+            <span class="link-subtitle">my favorite items</span>
+          </div>
+        </a>
+      </div>
 
     </main>
 
